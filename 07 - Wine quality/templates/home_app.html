@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <h1 style="text-transform: uppercase; text-align: center; font-size: 3.5em">
+        &#127863; &#128525; Welcome wine lovers !!! &#127863; &#128525;</h1>
+
+    <h2 style="font-size: 1.2em">
+        Hello l'équipe ! 
+        <br>
+        <br>
+        Alors pour pouvoir faire marcher cette API, vous avez juste à renseigner les 
+        informations (les détails) demandées ci-dessous, concernant le vin.
+        <br>
+        <br>
+        Ces filtres demandés, serviront à vous donner la qualité du vin en fonction des critères renseignés.
+        <br>
+        <br>
+        L'API vous donnera une note sur /10. Soyez donc bien précis avec les informations que vous allez rentrer si vous vouler un résultat le plus optimal possible.
+        <br>
+        <br>
+        Allez, à vos tire-bouchons !!   &#129305;&#127997;&#129305;&#127997;</h2>
+    
+    </h2>
+</body> 
+
+<body>
+    <nav>
+      <ul>
+         <li><a href="documentation">CLIQUEZ ICI : DOCUMENTATION DE L'API !</a></li>
+      </ul>
+    </nav>
+</body>
+
+<body>
+        <div style="text-align:center">
+            <h1>WINE QUALITY PREDICTION !</h1>
+        </div>
+
+
+
+<form action="{{ url_for('home_app') }}" method="POST">
+    <fieldset>
+<style>
+        legend {font-weight:bold;font-size:larger;}
+</style>
+        <legend style="font-size: 1em">
+            Wine information needed for quality estimation:</legend>
+        Fixed acidity:
+        <input name="fixed_acidity" type="float" value="0" required>
+        <br>
+        <br> Volatile acidity:
+        <input name="volatile_acidity" type="float" value="0" required>
+        <br>
+        <br> Citric acid:
+        <input name="citric_acid" type="float" value="0" required>
+        <br>
+        <br>
+        Alcalinity of ash:
+        <input name="alcalinity_of_ash" type="float" value="0" required>
+        <br>
+        <br> Total sulfur dioxide:
+        <input name="total_sulfur_dioxide" type="float" value="0" required>
+        <br>
+        <br> Density:
+        <input name="density" type="float" value="0" required>
+        <br>
+        <br>
+        PH:
+        <input name="pH" type="float" value="0" required>
+        <br>
+        <br> Sulfates:
+        <input name="sulphates" type="float" value="0" required>
+        <br>
+        <br> Alcohol:
+        <input name="alcohol" type="float" value="0" required>
+        <br>
+        <br>
+        Residual sugar:
+        <input name="residual_sugar" type="float"  value="0" required>
+        <br>
+        <br> Chlorides:
+        <input name="chlorides" type="float" value="0" required>
+        <br>
+        <br> Free sulfur dioxide:
+        <input name="free_sulfur_dioxide" type="float" value="0" required>
+        <br>
+        <br>
+        <input type="submit" required>
+    </fieldset>
+</form>
+<br>
+<div class="pred" align="center">
+    {% if pred %}
+        <br> The quality of this wine is :
+           <p style="font-size:3em">{{pred}}</p>
+    {% endif %}
+</div>
+</body>
+</html>
